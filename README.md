@@ -27,6 +27,7 @@ To run this project locally, follow these steps:
 
 ```bash
 git clone https://github.com/Josephatmusyoka/Weather-Project-PLP-python.git
+```
 
 ### 2. Navigate into the project directory
 
