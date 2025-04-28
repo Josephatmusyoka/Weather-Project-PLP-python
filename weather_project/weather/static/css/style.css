@@ -1,0 +1,77 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background: #e0f7fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for centering content */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Header and logo styling */
+header {
+    margin-bottom: 40px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Heading styles */
+h1 {
+    color: #00796b;
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+/* Weather form styling */
+.weather-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.weather-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #00796b;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.weather-form button {
+    padding: 10px 20px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.weather-form button:hover {
+    background-color: #004d40;
+}
+
+/* Error message styling */
+.error-message {
+    margin-top: 20px;
+    color: red;
+    font-size: 1.1em;
+}
+
+/* Optional: Add extra padding to the bottom of the page */
+footer {
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #00796b;
+}

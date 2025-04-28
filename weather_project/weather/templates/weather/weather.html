@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Info</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Weather in {{ weather_data.city|title }} - Day Forecast</h1>
+    </header>
+
+    <div class="container">
+        <!-- Weather info container -->
+        <div class="weather-info">
+            <!-- Show current weather -->
+            <p><strong>Temperature:</strong> {{ weather_data.temperature }}°C</p>
+            <p><strong>Weather:</strong> {{ weather_data.description|title }}</p>
+            <p><strong>Humidity:</strong> {{ weather_data.humidity }}%</p>
+            <p><strong>Pressure:</strong> {{ weather_data.pressure }} hPa</p>
+            <p><strong>Wind Speed:</strong> {{ weather_data.wind_speed }} m/s</p>
+            
+            <!-- Weather icon -->
+            <img src="http://openweathermap.org/img/wn/{{ weather_data.icon }}@2x.png" alt="Weather Icon">
+        </div>
+
+        <!-- Day Forecast Navigation -->
+        <div class="forecast">
+            <h2>Forecast for {{ weather_data.city|title }}</h2>
+
+            <!-- Displaying forecast one day at a time -->
+            <div class="forecast-container">
+                {% for day in weather_data.forecast %}
+                    <p><strong>Date:</strong> {{ day.date|date:"l, F j, Y" }}</p> <!-- Show Date -->
+                    <p><strong>Time:</strong> {{ day.date|date:"H:i" }}</p> <!-- Show Time -->
+                    <p><strong>Temperature:</strong> {{ day.temperature }}°C</p>
+                    <p><strong>Weather:</strong> {{ day.description|title }}</p>
+                    <p><strong>Wind Speed:</strong> {{ day.wind_speed }} m/s</p>
+                    <img src="http://openweathermap.org/img/wn/{{ day.icon }}@2x.png" alt="Weather Icon">
+                {% endfor %}
+            </div>
+
+            <!-- Navigation Arrows for Next and Previous -->
+            <div class="forecast-navigation">
+                <button id="prevDay" class="nav-button">&#8592; Previous</button>
+                <button id="nextDay" class="nav-button">Next &#8594;</button>
+            </div>
+        </div>
+
+        <!-- Back to search link -->
+        <a href="{% url 'index' %}" class="back-btn">Back to Search</a>
+    </div>
+
+    <script src="{% static 'js/weather.js' %}"></script>
+</body>
+</html>

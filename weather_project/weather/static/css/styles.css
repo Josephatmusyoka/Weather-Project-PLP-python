@@ -1,0 +1,188 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0c4f58;
+    background-image: url('https://study.com/cimages/videopreview/weather-definition-and-types_113503.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;  /* Changed from height to min-height */
+    margin: 0;
+    position: relative;
+    overflow-x: hidden;  /* Prevent horizontal overflow */
+}
+
+/* Add a faded overlay for the background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #e0f7fa55; /* White overlay with 60% opacity */
+    z-index: -1;
+}
+
+/* Heading styles */
+h1 {
+    color: #00796b;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/* Weather info container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Faded background for contrast */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 70%;
+    max-width: 1200px;  /* Prevents it from stretching too wide */
+    margin: 0 auto;
+}
+
+/* Styling for the weather data container */
+.weather-info {
+    text-align: center;
+}
+
+/* Paragraph styling for the weather data */
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+/* Strong tags inside paragraphs */
+p strong {
+    color: #00796b;
+}
+
+/* Image styling for weather icon */
+img {
+    margin-top: 15px;
+    max-width: 80px; /* Increased max-width for better responsiveness */
+    height: auto;
+}
+
+/* Styling for the "Back to Search" button */
+a {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: #00796b;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+/* Hover effect for the "Back to Search" button */
+a:hover {
+    background-color: #004d40;
+    transition: background-color 0.3s ease;
+}
+
+/* 5-Day Forecast Styles */
+.forecast {
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Title for the 5-day forecast */
+.forecast h2 {
+    font-size: 1.8rem;
+    color: #00796b;
+    margin-bottom: 20px;
+}
+
+/* Styling for each forecast item */
+.forecast-items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual forecast item */
+.forecast-item {
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Forecast item date */
+.forecast-item p strong {
+    font-size: 1.1rem;
+}
+
+/* Forecast item image */
+.forecast-item img {
+    margin-top: 10px;
+    max-width: 50px;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+    .forecast-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .forecast-item {
+        width: 90%;  /* Adjusted for smaller screens */
+        margin: 10px 0;
+    }
+}
+
+/* Styles for Navigation Arrows */
+.arrow-button {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #00796b;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.arrow-button:hover {
+    color: #004d40;
+}
+
+/* Arrow button container */
+.arrow-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 20px;
+}
+
+/* Weather date and time styling */
+.weather-day-time {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #00796b;
+}
+
+/* Optional: Loading state */
+.loading {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #00796b;
+    margin-top: 50px;
+}
